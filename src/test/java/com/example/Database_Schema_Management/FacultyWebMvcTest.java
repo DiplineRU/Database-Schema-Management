@@ -1,11 +1,11 @@
 package com.example.Database_Schema_Management;
 
-import com.example.Intro_to_SQL_party2.controller.FacultyController;
-import com.example.Intro_to_SQL_party2.model.Faculty;
-import com.example.Intro_to_SQL_party2.repository.FacultyRepository;
-import com.example.Intro_to_SQL_party2.repository.StudentRepository;
-import com.example.Intro_to_SQL_party2.service.FacultService;
-import com.example.Intro_to_SQL_party2.service.StudentService;
+import com.example.Database_Schema_Management.controller.FacultyController;
+import com.example.Database_Schema_Management.model.Faculty;
+import com.example.Database_Schema_Management.repository.FacultyRepository;
+import com.example.Database_Schema_Management.repository.StudentRepository;
+import com.example.Database_Schema_Management.service.FacultService;
+import com.example.Database_Schema_Management.service.StudentService;
 import org.json.JSONObject;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;

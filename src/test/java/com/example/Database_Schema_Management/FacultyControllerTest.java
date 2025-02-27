@@ -1,7 +1,7 @@
 package com.example.Database_Schema_Management;
 
-import com.example.Intro_to_SQL_party2.controller.FacultyController;
-import com.example.Intro_to_SQL_party2.model.Faculty;
+import com.example.Database_Schema_Management.controller.FacultyController;
+import com.example.Database_Schema_Management.model.Faculty;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
