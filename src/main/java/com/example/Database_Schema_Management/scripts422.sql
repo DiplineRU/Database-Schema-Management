@@ -1,15 +1,20 @@
-create table car
-(
-    id    integer not null primary key,
-    stamp varchar not null,
-    model varchar not null,
-    cost  INTEGER NOT NULL
+-- Создание таблицы Car
+CREATE TABLE Car (
+                     id SERIAL PRIMARY KEY,
+                     brand VARCHAR(50) NOT NULL,
+                     model VARCHAR(50) NOT NULL,
+                     cost DECIMAL(10, 2) NOT NULL
 );
-create table person
-(
-    carId          integer                    not null primary key,
-    name           varchar                    not null,
-    age            integer check ( age > 16 ) not null default 20,
-    driversLicense BIT,
-    foreign key (carId) references car (id)
-)
+
+-- Создание таблицы Person
+CREATE TABLE Person (
+                        id SERIAL PRIMARY KEY,
+                        name VARCHAR(100) NOT NULL,
+                        age INTEGER NOT NULL,
+                        has_driver_license BOOLEAN NOT NULL DEFAULT FALSE,
+                        car_id INTEGER REFERENCES Car(id)
+);
+
+-- Добавляем ограничение на возраст
+ALTER TABLE Person
+    ADD CONSTRAINT age_positive CHECK (age > 0);

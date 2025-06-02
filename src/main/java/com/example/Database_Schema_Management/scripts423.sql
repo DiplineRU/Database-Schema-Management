@@ -1,16 +1,9 @@
-SELECT faculties.name, students.faculty_id AS id, students.name, students.age
-FROM faculties
-         INNER JOIN students
-                    ON faculties.id = students.faculty_id;
+-- Первый JOIN-запрос: информация о студентах с названиями факультетов
+SELECT s.name AS student_name, s.age, f.name AS faculty_name
+FROM Student s
+         JOIN Faculty f ON s.faculty_id = f.id;
 
-SELECT avatar.file_path,
-       avatar.student_id as id,
-       avatar.file_size,
-       avatar.media_type,
-       avatar.data,
-       students.name,
-       students.age
-FROM avatar
-         INNER JOIN students
-                    ON avatar.student_id = students.id
-WHERE avatar.file_path != NULL;
+-- Второй JOIN-запрос: студенты с аватарками
+SELECT s.name AS student_name, s.age
+FROM Student s
+         JOIN Avatar a ON s.id = a.student_id;
