@@ -1,11 +1,10 @@
-create table students
-(
-    age  INTEGER CHECK ( age > 16 ) default 20,
-    name text unique not null
+-- Ограничения для таблицы Student
+ALTER TABLE Student
+    ADD CONSTRAINT age_check CHECK (age >= 16),
+    ADD CONSTRAINT name_unique UNIQUE (name),
+ALTER COLUMN name SET NOT NULL,
+    ALTER COLUMN age SET DEFAULT 20;
 
-);
-create table faculties
-(
-    color varchar unique,
-    name  varchar unique
-);
+-- Ограничение для таблицы Faculty
+ALTER TABLE Faculty
+    ADD CONSTRAINT name_color_unique UNIQUE (name, color);
